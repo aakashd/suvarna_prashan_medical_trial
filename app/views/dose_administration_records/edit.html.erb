@@ -1,6 +1,5 @@
-<h1>Editing dose_administration_record</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @dose_administration_record %> |
-<%= link_to 'Back', dose_administration_records_path %>
+<%- model_class = DoseAdministrationRecord -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => DoseAdministrationRecord %></h1>
+</div>
+<%= render :partial => 'form' %>
