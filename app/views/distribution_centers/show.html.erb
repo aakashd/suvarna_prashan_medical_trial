@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @distribution_center.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @distribution_center.address %>
+</p>
+
+<%= link_to 'Edit', edit_distribution_center_path(@distribution_center) %> |
+<%= link_to 'Back', distribution_centers_path %>

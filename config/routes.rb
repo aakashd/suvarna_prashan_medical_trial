@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :distribution_centers
+
   resources :nakshatra_dates
 
   resources :dose_administration_records
