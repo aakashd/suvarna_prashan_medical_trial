@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Patient:</strong>
+  <%= @dose_administration_record.patient %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @dose_administration_record.user %>
+</p>
+
+<p>
+  <strong>Nakshatra date:</strong>
+  <%= @dose_administration_record.nakshatra_date %>
+</p>
+
+<%= link_to 'Edit', edit_dose_administration_record_path(@dose_administration_record) %> |
+<%= link_to 'Back', dose_administration_records_path %>

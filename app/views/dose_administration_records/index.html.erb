@@ -1,0 +1,29 @@
+<h1>Listing dose_administration_records</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Patient</th>
+      <th>User</th>
+      <th>Nakshatra date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dose_administration_records.each do |dose_administration_record| %>
+      <tr>
+        <td><%= dose_administration_record.patient %></td>
+        <td><%= dose_administration_record.user %></td>
+        <td><%= dose_administration_record.nakshatra_date %></td>
+        <td><%= link_to 'Show', dose_administration_record %></td>
+        <td><%= link_to 'Edit', edit_dose_administration_record_path(dose_administration_record) %></td>
+        <td><%= link_to 'Destroy', dose_administration_record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dose administration record', new_dose_administration_record_path %>
