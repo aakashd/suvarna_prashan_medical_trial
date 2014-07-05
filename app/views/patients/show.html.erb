@@ -27,6 +27,8 @@
       <dd><pre class="prettyprint"><%= @patient.gender %></pre></dd>
       <dt class="label label-default"><%= model_class.human_attribute_name(:blood_group) %></dt>
       <dd><pre class="prettyprint"><%= @patient.blood_group %></pre></dd>
+      <dt class="label label-default">Distribution Center</dt>
+      <dd><pre class="prettyprint"><%= @patient.distribution_center.name %></pre></dd>
   </dl>
 </div>
 

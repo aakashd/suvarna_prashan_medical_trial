@@ -1,18 +1,18 @@
 <%= form_for @patient, :html => { :class => 'form-horizontal form-model' } do |f| %>
   <div class="form-group">
-    <%= f.label :name, :class => 'control-label col-md-2' %>
+    <%= f.label 'Name *', :class => 'control-label col-md-2' %>
     <div class="col-md-10">
       <%= f.text_field :name, :class => 'text-field form-control' %>
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :date_of_birth, :class => 'control-label col-md-2' %>
+    <%= f.label 'Date of Birth *', :class => 'control-label col-md-2' %>
     <div class="col-md-10">
-      <%= f.date_select :date_of_birth, :class => 'text-field form-control' %>
+      <%= f.date_select :date_of_birth, {:start_year => 2008, :end_year => Date.today.year} %>
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :fathers_name, :class => 'control-label col-md-2' %>
+    <%= f.label "Father Name *", :class => 'control-label col-md-2' %>
     <div class="col-md-10">
       <%= f.text_field :fathers_name, :class => 'text-field form-control' %>
     </div>
@@ -30,7 +30,7 @@
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :mobile, :class => 'control-label col-md-2' %>
+    <%= f.label 'Mobile *', :class => 'control-label col-md-2' %>
     <div class="col-md-10">
       <%= f.text_field :mobile, :class => 'text-field form-control' %>
     </div>
@@ -48,21 +48,21 @@
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :registration_number, :class => 'control-label col-md-2' %>
+    <%= f.label 'Gender *', :class => 'control-label col-md-2' %>
     <div class="col-md-10">
-      <%= f.text_field :registration_number, :class => 'text-field form-control' %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :gender, :class => 'control-label col-md-2' %>
-    <div class="col-md-10">
-      <%= f.text_field :gender, :class => 'text-field form-control' %>
+      <%= f.select :gender, [Patient::Gender::MALE, Patient::Gender::FEMALE], {}, {:class => 'form-control'} %>
     </div>
   </div>
   <div class="form-group">
     <%= f.label :blood_group, :class => 'control-label col-md-2' %>
     <div class="col-md-10">
-      <%= f.text_field :blood_group, :class => 'text-field form-control' %>
+      <%= f.select :blood_group, Patient::BloodGroup::ALL, {}, {:class => 'form-control'} %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label 'Center *', :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.select :distribution_center_id, DistributionCenter.all.collect {|p| [ p.name, p.id ] }, {}, {:class => 'form-control'} %>
     </div>
   </div>
 

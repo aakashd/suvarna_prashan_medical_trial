@@ -4,7 +4,7 @@ class PatientsController < ApplicationController
   # GET /patients
   # GET /patients.json
   def index
-    @patients = Patient.all
+    @patients = Patient.all.order('name asc')
   end
 
   # GET /patients/1
@@ -31,7 +31,10 @@ class PatientsController < ApplicationController
         format.html { redirect_to @patient, notice: 'Patient was successfully created.' }
         format.json { render :show, status: :created, location: @patient }
       else
-        format.html { render :new }
+        format.html {
+          flash.now[:alert] = @patient.errors.full_messages.join(", ")
+          render :new
+        }
         format.json { render json: @patient.errors, status: :unprocessable_entity }
       end
     end
@@ -45,7 +48,10 @@ class PatientsController < ApplicationController
         format.html { redirect_to @patient, notice: 'Patient was successfully updated.' }
         format.json { render :show, status: :ok, location: @patient }
       else
-        format.html { render :edit }
+        format.html {
+          flash.now[:alert] = @patient.errors.full_messages.join(", ")
+          render :edit
+        }
         format.json { render json: @patient.errors, status: :unprocessable_entity }
       end
     end
