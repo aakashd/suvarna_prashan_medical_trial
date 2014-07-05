@@ -25,6 +25,17 @@ class User < ActiveRecord::Base
     end
   end
 
-
   devise authentication_keys: [:login]
+
+  def doctor?
+    role == Role::DOCTOR
+  end
+
+  def supervisor?
+    role == Role::SUPERVISOR
+  end
+
+  def new_registrant?
+    role.blank?
+  end
 end

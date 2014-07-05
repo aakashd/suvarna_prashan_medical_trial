@@ -1,4 +1,5 @@
 class CheckupRecordsController < ApplicationController
+  load_and_authorize_resource
   before_action :set_checkup_record, only: [:show, :edit, :update, :destroy]
 
   # GET /checkup_records

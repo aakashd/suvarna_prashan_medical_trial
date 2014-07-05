@@ -1,4 +1,5 @@
 class NakshatraDatesController < ApplicationController
+  load_and_authorize_resource
   before_action :set_nakshatra_date, only: [:show, :edit, :update, :destroy]
 
   # GET /nakshatra_dates

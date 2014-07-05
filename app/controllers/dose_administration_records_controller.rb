@@ -1,4 +1,5 @@
 class DoseAdministrationRecordsController < ApplicationController
+  load_and_authorize_resource
   before_action :set_dose_administration_record, only: [:show, :edit, :update, :destroy]
 
   # GET /dose_administration_records

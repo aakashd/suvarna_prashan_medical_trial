@@ -1,10 +1,12 @@
 class PatientsController < ApplicationController
+  load_and_authorize_resource
   before_action :set_distribution_center
   before_action :set_patient, only: [:show, :edit, :update, :destroy]
 
   # GET /patients
   # GET /patients.json
   def index
+    authorize! :read_patients, @distribution_center
     @patients = @distribution_center.patients.order('name asc')
   end
 
