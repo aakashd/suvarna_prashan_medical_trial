@@ -27,6 +27,21 @@ Rails.application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+  # Don't care if the mailer can't send.
+  config.action_mailer.raise_delivery_errors = false
+
+  config.action_mailer.default_url_options = {:host => ENV['TR_URL_HOST']}
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      address: 'smtp.gmail.com',
+      port: 587,
+      domain: ENV['TR_URL_HOST'],
+      user_name: ENV['SENDGRID_USERNAME'],
+      password: ENV['SENDGRID_PASSWORD'],
+      authentication: 'plain',
+      enable_starttls_auto: true
+  }
+
   # Adds additional error checking when serving assets at runtime.
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
@@ -37,6 +52,5 @@ Rails.application.configure do
 
   #->Prelang
   GA.tracker = "UA-123123-1"
-
 end
 
