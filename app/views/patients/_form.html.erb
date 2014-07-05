@@ -1,4 +1,4 @@
-<%= form_for @patient, :html => { :class => 'form-horizontal form-model' } do |f| %>
+<%= form_for [@distribution_center, @patient], :html => { :class => 'form-horizontal form-model' } do |f| %>
   <div class="form-group">
     <%= f.label 'Name *', :class => 'control-label col-md-2' %>
     <div class="col-md-10">
@@ -68,9 +68,9 @@
 
   <div class="form-group">
     <div class='col-md-offset-2 col-md-10'>
-      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= f.submit 'Save', :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                  patients_path, :class => 'btn btn-default' %>
+                  distribution_center_patients_path(@distribution_center), :class => 'btn btn-default' %>
     </div>
   </div>
 <% end %>

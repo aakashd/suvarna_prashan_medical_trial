@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   get 'home/index'
 
-  resources :patients
-
-  resources :distribution_centers
+  resources :distribution_centers do
+    resources :patients
+  end
 
   resources :nakshatra_dates
 

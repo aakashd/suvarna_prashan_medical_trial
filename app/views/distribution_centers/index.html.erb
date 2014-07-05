@@ -19,6 +19,7 @@
         <td><%= distribution_center.address %></td>
         <td><%= distribution_center.supervisors.collect(&:name).join(', ') %></td>
         <td>
+          <%= link_to 'Patients', distribution_center_patients_path(distribution_center), :class => 'btn btn-xs'%>
           <%= link_to 'View', distribution_center_path(distribution_center), :class => 'btn btn-xs'%>
           <%= link_to 'Edit', edit_distribution_center_path(distribution_center), :class => 'btn btn-xs'%>
           <%= link_to 'Delete', distribution_center_path(distribution_center), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs' %>
