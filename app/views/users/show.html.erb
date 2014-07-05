@@ -20,6 +20,10 @@
     <dd>
       <pre class="prettyprint"><%= @user.role %></pre>
     </dd>
+    <dt class="label label-default">Distribution Center</dt>
+    <dd>
+      <pre class="prettyprint"><%= @user.distribution_center.try(:name) %></pre>
+    </dd>
   </dl>
 </div>
 

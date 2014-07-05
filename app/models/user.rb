@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
 
   validates_presence_of :name
   validates_inclusion_of :role, :in => [Role::SUPERVISOR, Role::DOCTOR], :allow_blank => true
+
+  belongs_to :distribution_center
   
   #->Prelang (user_login:devise/username_login_support)
   def self.find_first_by_auth_conditions(warden_conditions)

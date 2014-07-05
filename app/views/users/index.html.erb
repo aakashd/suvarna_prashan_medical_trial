@@ -8,7 +8,7 @@
     <th>Name</th>
     <th>Email</th>
     <th>Role</th>
-    <th>Created On</th>
+    <th>Distribution Center</th>
     <th>Actions</th>
   </tr>
   </thead>
@@ -19,7 +19,7 @@
         <td><%= user.name %></td>
         <td><%= user.email %></td>
         <td><%= user.role %></td>
-        <td><%=l user.created_at, format: :long %></td>
+        <td><%= user.distribution_center.try(:name) %></td>
         <td>
           <%= link_to 'View', user_path(user), :class => 'btn btn-xs' %>
           <%= link_to 'Edit', edit_user_path(user), :class => 'btn btn-xs' %>

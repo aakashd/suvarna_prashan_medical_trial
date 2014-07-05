@@ -32,6 +32,12 @@
         <%= f.select :role, [nil, User::Role::DOCTOR, User::Role::SUPERVISOR] %>
       </div>
     </div>
+    <div class="form-group">
+      <%= f.label :distribution_center_id, :class => 'control-label col-md-2' %>
+      <div class="col-md-10">
+        <%= f.select :distribution_center_id, DistributionCenter.all.collect {|p| [ p.name, p.id ] }, :include_blank => true %>
+      </div>
+    </div>
 
     <div class="form-group">
       <div class='col-md-offset-2 col-md-10'>
