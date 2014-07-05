@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :nakshatra_dates
+
   resources :dose_administration_records
 
   resources :checkup_records
