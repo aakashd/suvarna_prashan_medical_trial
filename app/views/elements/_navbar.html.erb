@@ -17,6 +17,9 @@
     <ul class="nav navbar-nav navbar-right">
       <% if user_signed_in? %>
           <li>
+            <%= link_to 'Nakshatras', nakshatra_dates_path %>
+          </li>
+          <li>
             <%= link_to 'Centers', distribution_centers_path %>
           </li>
           <li>

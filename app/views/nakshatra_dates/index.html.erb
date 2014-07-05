@@ -18,13 +18,9 @@
         <td><%= nakshatra_date.nakshatra_date %></td>
         <td><%=l nakshatra_date.created_at, format: :long %></td>
         <td>
-          <%= link_to nakshatra_date_path(nakshatra_date), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
-            <%= glyph 'info-sign' %>
-            <%= glyph 'pencil' %>
-          <%- end -%>
-          <%= link_to nakshatra_date_path(nakshatra_date), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
-            <%= glyph 'remove' %>
-          <%- end -%>
+          <%= link_to 'View', nakshatra_date_path(nakshatra_date), :class => 'btn btn-xs' %>
+          <%= link_to 'Edit', edit_nakshatra_date_path(nakshatra_date), :class => 'btn btn-xs' %>
+          <%= link_to 'Delete', nakshatra_date_path(nakshatra_date), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs' %>
         </td>
       </tr>
     <% end %>
