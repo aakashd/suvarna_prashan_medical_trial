@@ -1,4 +1,15 @@
 GIT
+  remote: git://github.com/plataformatec/devise.git
+  revision: 9a5783ade3e55e441396a055cea63701655eff01
+  specs:
+    devise (3.2.4)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
+
+GIT
   remote: git://github.com/twbs/bootstrap-sass.git
   revision: 7d6bf1994a42c3ffd2c45f52fad6fda7884b2da9
   specs:
@@ -73,12 +84,6 @@ GEM
       addressable
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
-    devise (3.2.4)
-      bcrypt (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (>= 3.2.6, < 5)
-      thread_safe (~> 0.1)
-      warden (~> 1.2.3)
     diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.2.1)
@@ -252,7 +257,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.0.1)
   compass-rails (~> 1.1.3)
-  devise (~> 3.2.2)
+  devise!
   factory_girl_rails
   google-analytics-rails
   heroku-deflater
