@@ -7,7 +7,7 @@
       <th>ID</th>
       <th>Name</th>
       <th>Address</th>
-      <th>Created On</th>
+      <th>Supervisors</th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -17,7 +17,7 @@
         <td><%= distribution_center.id %></td>
         <td><%= distribution_center.name %></td>
         <td><%= distribution_center.address %></td>
-        <td><%=l distribution_center.created_at, format: :long %></td>
+        <td><%= distribution_center.supervisors.collect(&:name).join(', ') %></td>
         <td>
           <%= link_to 'View', distribution_center_path(distribution_center), :class => 'btn btn-xs'%>
           <%= link_to 'Edit', edit_distribution_center_path(distribution_center), :class => 'btn btn-xs'%>
