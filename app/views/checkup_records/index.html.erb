@@ -1,37 +1,44 @@
-<h1>Listing checkup_records</h1>
-
-<table>
+<%- model_class = CheckupRecord -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => CheckupRecord %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Patient</th>
-      <th>User</th>
-      <th>Height</th>
-      <th>Weight</th>
-      <th>Mental assessment</th>
-      <th>Physical assessment</th>
-      <th>Notes</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:height) %></th>
+      <th><%= model_class.human_attribute_name(:weight) %></th>
+      <th><%= model_class.human_attribute_name(:mental_assessment) %></th>
+      <th><%= model_class.human_attribute_name(:physical_assessment) %></th>
+      <th><%= model_class.human_attribute_name(:notes) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @checkup_records.each do |checkup_record| %>
       <tr>
-        <td><%= checkup_record.patient %></td>
-        <td><%= checkup_record.user %></td>
+        <td><%= checkup_record.id %></td>
         <td><%= checkup_record.height %></td>
         <td><%= checkup_record.weight %></td>
         <td><%= checkup_record.mental_assessment %></td>
         <td><%= checkup_record.physical_assessment %></td>
         <td><%= checkup_record.notes %></td>
-        <td><%= link_to 'Show', checkup_record %></td>
-        <td><%= link_to 'Edit', edit_checkup_record_path(checkup_record) %></td>
-        <td><%= link_to 'Destroy', checkup_record, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l checkup_record.created_at, format: :long %></td>
+        <td>
+          <%= link_to checkup_record_path(checkup_record), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to checkup_record_path(checkup_record), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Checkup record', new_checkup_record_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_checkup_record_path,
+            :class => 'btn btn-primary' %>

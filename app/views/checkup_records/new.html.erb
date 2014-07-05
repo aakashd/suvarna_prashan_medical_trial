@@ -1,5 +1,6 @@
-<h1>New checkup_record</h1>
+<%- model_class = CheckupRecord -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => CheckupRecord %></h1>
+</div>
+<%= render :partial => 'form' %>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', checkup_records_path %>

@@ -1,17 +1,40 @@
-<%= simple_form_for(@checkup_record) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.association :patient %>
-    <%= f.association :user %>
-    <%= f.input :height %>
-    <%= f.input :weight %>
-    <%= f.input :mental_assessment %>
-    <%= f.input :physical_assessment %>
-    <%= f.input :notes %>
+<%= form_for @checkup_record, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :height, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :height, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :weight, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :weight, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :mental_assessment, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :mental_assessment, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :physical_assessment, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :physical_assessment, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :notes, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :notes, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  checkup_records_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>

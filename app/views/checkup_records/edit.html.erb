@@ -1,6 +1,5 @@
-<h1>Editing checkup_record</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @checkup_record %> |
-<%= link_to 'Back', checkup_records_path %>
+<%- model_class = CheckupRecord -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => CheckupRecord %></h1>
+</div>
+<%= render :partial => 'form' %>
