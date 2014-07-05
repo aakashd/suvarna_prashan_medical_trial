@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @patient.name %>
+</p>
+
+<p>
+  <strong>Date of birth:</strong>
+  <%= @patient.date_of_birth %>
+</p>
+
+<p>
+  <strong>Fathers name:</strong>
+  <%= @patient.fathers_name %>
+</p>
+
+<p>
+  <strong>Mothers name:</strong>
+  <%= @patient.mothers_name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @patient.address %>
+</p>
+
+<p>
+  <strong>Mobile:</strong>
+  <%= @patient.mobile %>
+</p>
+
+<p>
+  <strong>Landline:</strong>
+  <%= @patient.landline %>
+</p>
+
+<p>
+  <strong>Present complaints:</strong>
+  <%= @patient.present_complaints %>
+</p>
+
+<p>
+  <strong>Registration number:</strong>
+  <%= @patient.registration_number %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @patient.gender %>
+</p>
+
+<p>
+  <strong>Blood group:</strong>
+  <%= @patient.blood_group %>
+</p>
+
+<p>
+  <strong>Distribution center:</strong>
+  <%= @patient.distribution_center %>
+</p>
+
+<%= link_to 'Edit', edit_patient_path(@patient) %> |
+<%= link_to 'Back', patients_path %>

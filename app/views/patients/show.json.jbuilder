@@ -1,0 +1,1 @@
+json.extract! @patient, :id, :name, :date_of_birth, :fathers_name, :mothers_name, :address, :mobile, :landline, :present_complaints, :registration_number, :gender, :blood_group, :distribution_center_id, :created_at, :updated_at

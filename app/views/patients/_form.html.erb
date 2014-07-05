@@ -1,0 +1,22 @@
+<%= simple_form_for(@patient) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :date_of_birth %>
+    <%= f.input :fathers_name %>
+    <%= f.input :mothers_name %>
+    <%= f.input :address %>
+    <%= f.input :mobile %>
+    <%= f.input :landline %>
+    <%= f.input :present_complaints %>
+    <%= f.input :registration_number %>
+    <%= f.input :gender %>
+    <%= f.input :blood_group %>
+    <%= f.association :distribution_center %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
