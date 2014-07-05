@@ -1,0 +1,17 @@
+<%= simple_form_for(@checkup_record) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :patient %>
+    <%= f.association :user %>
+    <%= f.input :height %>
+    <%= f.input :weight %>
+    <%= f.input :mental_assessment %>
+    <%= f.input :physical_assessment %>
+    <%= f.input :notes %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

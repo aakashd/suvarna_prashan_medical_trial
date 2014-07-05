@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Patient:</strong>
+  <%= @checkup_record.patient %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @checkup_record.user %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @checkup_record.height %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @checkup_record.weight %>
+</p>
+
+<p>
+  <strong>Mental assessment:</strong>
+  <%= @checkup_record.mental_assessment %>
+</p>
+
+<p>
+  <strong>Physical assessment:</strong>
+  <%= @checkup_record.physical_assessment %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @checkup_record.notes %>
+</p>
+
+<%= link_to 'Edit', edit_checkup_record_path(@checkup_record) %> |
+<%= link_to 'Back', checkup_records_path %>
